@@ -52,8 +52,15 @@ TOKEN Scanner(void);
 // Declaracion de la funcion InicializarBuffer: no recibe ni devuelve ningun dato.
 void InicializarBuffer(void);
 
-
+// #define <identificador> <valor>
+// Se le indica al compilador que cada vez que vea el identificador (CANTIDAD_PALABRAS_RESERVADAS), lo reemplace por el valor (4)
 #define CANTIDAD_PALABRAS_RESERVADAS 4
+
+/* static especificador de clase de almacenamiento. 
+Tiene diferentes significados según el contexto. 
+Dentro de una función, hace que la variable conserve su valor entre múltiples llamadas a funciones . 
+Fuera de una función, restringe la visibilidad de la variable o función al archivo actual. */
+// const indica al compilador que no permita que el programador modifique la variable.
 static const char* palabras_reservadas[] = {
     "inicio",
     "fin",
