@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include "scanner.h"
+#include <stdio.h>    // se incluye la biblioteca standard input output
+#include "scanner.h" //se incluye la biblioteca scanner.h
 
 int main(void) {
     TOKEN t;
