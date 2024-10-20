@@ -37,16 +37,19 @@ typedef enum Simbolo_t {
     OTRO_SIMBOLO,
 } SIMBOLO;
 
-// Definicion de un puntero (????)
+/* Declaracion de funcion Buffer:
+    Devuelve un puntero a una cadena de caracteres constante (const char *).
+    No espera argumentos (void)
+Cuando llamemos a Buffer, obtendremos un puntero a una cadena de caracteres que no podemos cambiar */
 const char *Buffer(void);
 
-// Declaracion/prototipo de la funcion EsReservada, que no recibe ningun tipo de dato (void) y devuelve un TOKEN.
+// Declaracion/prototipo de la funcion EsReservada, que no espera ningun argumento (void) y devuelve un TOKEN.
 TOKEN EsReservada(void);
 
-// Declaracion de la funcion EsReservadaV2: no recibe ningun dato y devuelve un entero.
+// Declaracion de la funcion EsReservadaV2: no epsera ningun argumento (void) y devuelve un entero.
 int EsReservadaV2(void);
 
-// Declaracion de la funcion Scanner: no recibe ningun dato y devuelve un TOKEN.
+// Declaracion de la funcion Scanner: no espera ningun argumento (void) y devuelve un TOKEN.
 TOKEN Scanner(void);
 
 // Declaracion de la funcion InicializarBuffer: no recibe ni devuelve ningun dato.
@@ -58,9 +61,18 @@ void InicializarBuffer(void);
 
 /* static especificador de clase de almacenamiento. 
 Tiene diferentes significados según el contexto. 
-Dentro de una función, hace que la variable conserve su valor entre múltiples llamadas a funciones . 
+Dentro de una función, hace que la variable conserve su valor entre múltiples llamadas a funciones. 
 Fuera de una función, restringe la visibilidad de la variable o función al archivo actual. */
 // const indica al compilador que no permita que el programador modifique la variable.
+// char* -> Puntero a un char.
+
+/* Declaracion y definicion de un arreglo estatico de punteros a cadenas de caracteres constantes.
+static: el arreglo palabras_reservadas tiene una duración de almacenamiento estática. 
+Esto significa que su vida útil es toda la duración del programa, pero su alcance está limitado al archivo donde se declara (no es accesible fuera de ese archivo).
+const char*: cada elemento del arreglo es un puntero a una cadena de caracteres constante, es decir, no se puede modificar el contenido de las cadenas.
+palabras_reservadas[]: Se está definiendo un array, pero la cantidad de elementos se deduce automáticamente a partir de las inicializaciones.
+{ "inicio", "fin", "leer", "escribir" }: Se están inicializando los elementos del array con las cadenas de caracteres correspondientes. 
+Cada cadena se convierte en un puntero a const char que apunta al texto literal.*/
 static const char* palabras_reservadas[] = {
     "inicio",
     "fin",
@@ -68,6 +80,8 @@ static const char* palabras_reservadas[] = {
     "escribir"
 };
 
+// Poner un asterisco (*) a la izquierda de un puntero, hace que se recupere el valor que hay en dicho puntero (lo opuesto a &)
+// Poner un ampersan (&) a la izquierda de una variable, no da la direccion de memoria de dicha variable.
 static const char *tokens[] = {
     "PALABRA_RESERVADA",
     "ID",
