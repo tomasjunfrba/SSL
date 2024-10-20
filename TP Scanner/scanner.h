@@ -1,6 +1,8 @@
 #ifndef SCANNER_H
 #define SCANNER_H
 
+// Definicion de un tipo de dato TOKEN, que consiste en un enum llamado Token_t formado por toda esa lista de elementos.
+// Que una variable sea un enum, significa que contiene uno de los elementos que forma la lista de dicho enum.
 typedef enum Token_t {
     RESERVADA_TOKEN,
     ID_TOKEN,
@@ -15,8 +17,10 @@ typedef enum Token_t {
     FIN_DE_TEXTO_TOKEN,
 } TOKEN;
 
+// Definicion de un tipo de dato ESTADO que es un entero.
 typedef int ESTADO;
 
+// Definicion de tipo de dato SIMBOLO que consiste en un enum llamado Simbolo_t formado por toda esa lista de elementos.
 typedef enum Simbolo_t {
     LETRA_SIMBOLO,
     DIGITO_SIMBOLO,
@@ -33,14 +37,19 @@ typedef enum Simbolo_t {
     OTRO_SIMBOLO,
 } SIMBOLO;
 
+// Definicion de un puntero (????)
 const char *Buffer(void);
 
+// Declaracion/prototipo de la funcion EsReservada, que no recibe ningun tipo de dato (void) y devuelve un TOKEN.
 TOKEN EsReservada(void);
 
+// Declaracion de la funcion EsReservadaV2: no recibe ningun dato y devuelve un entero.
 int EsReservadaV2(void);
 
+// Declaracion de la funcion Scanner: no recibe ningun dato y devuelve un TOKEN.
 TOKEN Scanner(void);
 
+// Declaracion de la funcion InicializarBuffer: no recibe ni devuelve ningun dato.
 void InicializarBuffer(void);
 
 
