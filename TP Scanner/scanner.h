@@ -82,6 +82,8 @@ static const char* palabras_reservadas[] = {
 
 // Poner un asterisco (*) a la izquierda de un puntero, hace que se recupere el valor que hay en dicho puntero (lo opuesto a &)
 // Poner un ampersan (&) a la izquierda de una variable, no da la direccion de memoria de dicha variable.
+
+/* Declaracion y definicion de un array estatico de punteros a cadenas de caracteres */
 static const char *tokens[] = {
     "PALABRA_RESERVADA",
     "ID",
