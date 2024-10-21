@@ -150,3 +150,12 @@ TOKEN Scanner(void) {
         }
     }
 }
+
+/* 
+Resumen de funcionamiento:
+El escáner comienza a leer caracteres de la entrada.
+Según el carácter leído, cambia su estado y construye un buffer con caracteres que forman un token.
+Cuando un token completo se forma (como un identificador, una palabra reservada, un operador, etc.), se devuelve el token correspondiente.
+El escáner maneja errores léxicos y puede reconocer caracteres especiales o espacios.
+Este tipo de programa es fundamental en la construcción de compiladores o intérpretes, ya que es el primer paso en la interpretación o compilación de un lenguaje de programación. ¿Hay algo más específico que te gustaría saber sobre este programa?
+*/
